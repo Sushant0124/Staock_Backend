@@ -17,13 +17,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const url = process.env.MONGO_URL;
 
-app.use(express.json());
+
 app.use(cors({
     origin: ["https://stock-frontend-murex.vercel.app", "https://stock-dashboard-nine.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
 app.use(cookieParser());
+app.use(express.json());
 
 // Routes
 app.get("/allHoldings", async (req, res) => {
