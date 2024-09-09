@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 
 router.get("/profile", async (req, res) => {
   try {
+    console.log("Cookies:", req.cookies);
+
     const token = req.cookies.token; // Extract token from cookies
     console.log("Received token:", token);
     
