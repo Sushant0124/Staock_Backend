@@ -19,7 +19,7 @@ const url = process.env.MONGO_URL;
 
 app.use(express.json());
 app.use(cors({
-    origin: ["https://stock-frontend-murex.vercel.app/", "https://stock-dashboard-nine.vercel.app/"],
+    origin: ["https://stock-frontend-murex.vercel.app", "https://stock-dashboard-nine.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
