@@ -17,6 +17,9 @@ module.exports.Signup = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: true,
+      sameSite: 'None',
+  secure: true, 
+      path: '/'
     });
 
     res.status(201).json({
@@ -55,6 +58,9 @@ module.exports.Login = async (req, res, next) => {
        res.cookie("token", token, {
          withCredentials: true,
          httpOnly: true,
+         sameSite: 'None',
+  secure: true, 
+         path: '/'
        });
        res.status(201).json({ message: "User logged in successfully", success: true });
        next()
